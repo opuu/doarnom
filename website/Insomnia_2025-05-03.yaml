@@ -1,0 +1,1021 @@
+type: collection.insomnia.rest/5.0
+name: Pet Adoption
+meta:
+  id: wrk_2a0c93c3edfe4d569667fdcad5f4bb33
+  created: 1744468626443
+  modified: 1744468626443
+collection:
+  - name: Auth
+    meta:
+      id: fld_b5f79257a6c0428cbadf04772970e63a
+      created: 1744468881789
+      modified: 1744514885724
+      sortKey: -1744468881789
+    children:
+      - url: http://localhost:8000/auth/signin
+        name: Login
+        meta:
+          id: req_f1ec4c9cb8c64526986d5a24f433d983
+          created: 1744468884772
+          modified: 1744469007321
+          isPrivate: false
+          sortKey: -1744468884772
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"user": "hello@opu.rocks",
+            	"password": "password"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/auth/signup
+        name: Signup
+        meta:
+          id: req_9940f29991724648981003a492fc94fa
+          created: 1744469087972
+          modified: 1744469309091
+          isPrivate: false
+          sortKey: -1744469087972
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Tanjim",
+            	"email": "tanjim@example.com",
+            	"phone": "0123456789",
+            	"password": "password"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Categories
+    meta:
+      id: fld_72e645a3ee2c4219b59f00f604cf173c
+      created: 1744469504820
+      modified: 1744469504820
+      sortKey: -1744469504820
+    children:
+      - url: http://localhost:8000/categories
+        name: Create
+        meta:
+          id: req_0aec894327e1427bb77a4b6d91fc525a
+          created: 1744469508249
+          modified: 1744469924170
+          isPrivate: false
+          sortKey: -1744469508249
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Dogs",
+            	"description": "Browse dogs for adoption"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/categories/1
+        name: Update
+        meta:
+          id: req_04e881713a2947ad9da6b901e7c7670e
+          created: 1744469949377
+          modified: 1744515462984
+          isPrivate: false
+          sortKey: -1744469298110.5
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Cats Update",
+            	"description": "Browse cats for adoption"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/categories
+        name: List
+        meta:
+          id: req_4b79e1b301d8426dbdf8e81af3060fbc
+          created: 1744469983976
+          modified: 1744470011580
+          isPrivate: false
+          sortKey: -1744469508349
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/categories/1
+        name: Single
+        meta:
+          id: req_2f4b30c9e10a4cf58ccb1f85b38df0fd
+          created: 1744470022166
+          modified: 1744515450422
+          isPrivate: false
+          sortKey: -1744469508299
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/categories/1
+        name: Delete
+        meta:
+          id: req_d0f47fdb33034826b3d7fe63993f5fed
+          created: 1744470481410
+          modified: 1744470540066
+          isPrivate: false
+          sortKey: -1744469298010.5
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Breeds
+    meta:
+      id: fld_b11e390635114212b92249f989c75ee4
+      created: 1744470251488
+      modified: 1744471130963
+      sortKey: -1744469193304.5
+    children:
+      - url: http://localhost:8000/breeds
+        name: Create
+        meta:
+          id: req_01b3e80f07fb4c1ebe09d90da710d9b9
+          created: 1744470251490
+          modified: 1744470680264
+          isPrivate: false
+          sortKey: -1744469508249
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Dogs",
+            	"description": "Browse dogs for adoption",
+            	"category_id": 3
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/breeds/1
+        name: Update
+        meta:
+          id: req_7752a38fbf814a3fa9db5ac13fbebf46
+          created: 1744470251493
+          modified: 1744470419813
+          isPrivate: false
+          sortKey: -1744469298110.5
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Dogs",
+            	"description": "Browse dogs for adoption"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/breeds
+        name: List
+        meta:
+          id: req_0be281709f9c47b5adebb522818794f4
+          created: 1744470251494
+          modified: 1744470431232
+          isPrivate: false
+          sortKey: -1744469508349
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/breeds/1
+        name: Single
+        meta:
+          id: req_8cd97bfdad87406ebedd27bea4715868
+          created: 1744470251496
+          modified: 1744470428317
+          isPrivate: false
+          sortKey: -1744469508299
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/breeds/1
+        name: Delete
+        meta:
+          id: req_d6e903fad1d04faeb69b4344f75808c1
+          created: 1744470589516
+          modified: 1744470987960
+          isPrivate: false
+          sortKey: -1744469298060.5
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Traits
+    meta:
+      id: fld_378b57b36e9f42d3af9a8853e0b38a2e
+      created: 1744470841592
+      modified: 1744514847832
+      sortKey: -1744469037546.75
+    children:
+      - url: http://localhost:8000/traits
+        name: Create
+        meta:
+          id: req_a1a2f3580eac4dbbaac0b83f20a21098
+          created: 1744470841594
+          modified: 1744470947320
+          isPrivate: false
+          sortKey: -1744469508249
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Friendly",
+            	"description": "Friendly behavior",
+            	"category_id": 3
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/traits/1
+        name: Update
+        meta:
+          id: req_c4ff618961574da99f25976a1154d2ec
+          created: 1744470841596
+          modified: 1744470978594
+          isPrivate: false
+          sortKey: -1744469298110.5
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Friendly",
+            	"description": "Friendly behavior",
+            	"category_id": 3
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/traits
+        name: List
+        meta:
+          id: req_c3c333d7eb124abbbd3731d97440170b
+          created: 1744470841598
+          modified: 1744470851699
+          isPrivate: false
+          sortKey: -1744469508349
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/traits/1
+        name: Single
+        meta:
+          id: req_53df0c3da7094a4eab55822571ac091c
+          created: 1744470841600
+          modified: 1744470863974
+          isPrivate: false
+          sortKey: -1744469508299
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/traits/1
+        name: Delete
+        meta:
+          id: req_68e347a896fb4f708f30542d31fb4fe5
+          created: 1744470841602
+          modified: 1744470969543
+          isPrivate: false
+          sortKey: -1744469298060.5
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Shelters
+    meta:
+      id: fld_c096977d2fd240b5a6e8ca3a2a5f7fd7
+      created: 1744471124789
+      modified: 1744514850922
+      sortKey: -1744468959667.875
+    children:
+      - url: http://localhost:8000/shelters
+        name: Create
+        meta:
+          id: req_200657686f2941fe8c371e9fc416ee19
+          created: 1744471124792
+          modified: 1744471458997
+          isPrivate: false
+          sortKey: -1744469508249
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Pet Shelter",
+            	"address": "Address",
+            	"phone": "0123456789",
+            	"email": "email@example.com",
+            	"owner_id": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/shelters/1
+        name: Update
+        meta:
+          id: req_8687715bbf80403faa93cb0ccb86fa0f
+          created: 1744471124796
+          modified: 1744471467866
+          isPrivate: false
+          sortKey: -1744469298110.5
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Pet Shelter",
+            	"address": "Address",
+            	"phone": "0123456789",
+            	"email": "email@example.com",
+            	"owner_id": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/shelters
+        name: List
+        meta:
+          id: req_dd47acfd0d6e4aa5840f861d2c14eff9
+          created: 1744471124799
+          modified: 1744471141676
+          isPrivate: false
+          sortKey: -1744469508349
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/shelters/1
+        name: Single
+        meta:
+          id: req_3f245dd0dd5e4a539cdb6f62f0505150
+          created: 1744471124804
+          modified: 1744471147304
+          isPrivate: false
+          sortKey: -1744469508299
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/shelters/1
+        name: Delete
+        meta:
+          id: req_fa79e4187aff4d8ba0dc6c4f4d43b574
+          created: 1744471124807
+          modified: 1744471161470
+          isPrivate: false
+          sortKey: -1744469298060.5
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Pets
+    meta:
+      id: fld_36326f72a3994190aa9796a12ac1c1fa
+      created: 1744472241284
+      modified: 1744514853542
+      sortKey: -1744468920728.4375
+    children:
+      - url: http://localhost:8000/pets
+        name: Create
+        meta:
+          id: req_f911c0ad152240d5997d78d6030930c6
+          created: 1744472241287
+          modified: 1744472406042
+          isPrivate: false
+          sortKey: -1744469508249
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Pet Name",
+            	"description": "Desc",
+            	"shelter_id": 1,
+            	"category_id": 1,
+            	"breed_id": 1,
+            	"trait_ids": "[1,2]",
+            	"age": 2,
+            	"gender": "male",
+            	"weight": 12,
+            	"location": "location name"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/pets/1
+        name: Update
+        meta:
+          id: req_b53b86fe69af48d98bf27854d25975c0
+          created: 1744472241290
+          modified: 1744472442049
+          isPrivate: false
+          sortKey: -1744469298110.5
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Pet Name",
+            	"description": "Desc",
+            	"shelter_id": 1,
+            	"category_id": 1,
+            	"breed_id": 1,
+            	"trait_ids": "[1,2]",
+            	"age": 2,
+            	"gender": "male",
+            	"weight": 12,
+            	"location": "location name"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/pets
+        name: List
+        meta:
+          id: req_4f93e279260b4e0e8a0b890b5e92d4b8
+          created: 1744472241293
+          modified: 1744472257841
+          isPrivate: false
+          sortKey: -1744469508349
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/pets/1
+        name: Single
+        meta:
+          id: req_5ce0548b7632476fa8784e690d7735b6
+          created: 1744472241297
+          modified: 1744472261418
+          isPrivate: false
+          sortKey: -1744469508299
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/pets/1
+        name: Delete
+        meta:
+          id: req_345ace553b8348f18d5e855eef58dd52
+          created: 1744472241300
+          modified: 1744472274441
+          isPrivate: false
+          sortKey: -1744469298060.5
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Adoption Requests
+    meta:
+      id: fld_b8e34991402f418487dfa4bb38b142ed
+      created: 1744472596423
+      modified: 1744514856490
+      sortKey: -1744468901258.7188
+    children:
+      - url: http://localhost:8000/adoptions
+        name: Create
+        meta:
+          id: req_f67836b67cd04aee928819afad1b1b90
+          created: 1744472596427
+          modified: 1744473537864
+          isPrivate: false
+          sortKey: -1744469508249
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"pet_id": 1,
+            	"user_id": 1,
+            	"shelter_id": 1,
+            	"adoption_date": "{% now 'iso-8601', '' %}",
+            	"status": "submitted",
+            	"message": "I want this cat"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/adoptions/1
+        name: Update
+        meta:
+          id: req_ff112d3773464b8f8665497fc1227aa8
+          created: 1744472596430
+          modified: 1744473541728
+          isPrivate: false
+          sortKey: -1744469298110.5
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"pet_id": 1,
+            	"user_id": 1,
+            	"shelter_id": 1,
+            	"adoption_date": "{% now 'iso-8601', '' %}",
+            	"status": "submitted",
+            	"message": "I want this cat"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/adoptions
+        name: List
+        meta:
+          id: req_844c0518144b473e9256766f2e240ff1
+          created: 1744472596434
+          modified: 1744472607164
+          isPrivate: false
+          sortKey: -1744469508349
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/adoptions/1
+        name: Single
+        meta:
+          id: req_0ea4215eb855499bbd30726de401b9bc
+          created: 1744472596437
+          modified: 1744473013554
+          isPrivate: false
+          sortKey: -1744469508299
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/adoptions/1
+        name: Delete
+        meta:
+          id: req_d3ece0a5c5d64f14aa430d82328b8a14
+          created: 1744472596441
+          modified: 1744473039952
+          isPrivate: false
+          sortKey: -1744469298060.5
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_ab37ea19e4034e8996e379ea96b1d39e
+        authentication:
+          type: bearer
+          token: 9a612a46f27237acb3292fd2fce100c8c8eefc41@1
+          prefix: Bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_6846d1d3608eda62d1b798d2703d1f0f928e8ec2
+    created: 1744468626450
+    modified: 1744468626450
+environments:
+  name: Base Environment
+  meta:
+    id: env_6846d1d3608eda62d1b798d2703d1f0f928e8ec2
+    created: 1744468626446
+    modified: 1744469648204
+    isPrivate: false
+  data:
+    Authorization: Bearer 9a612a46f27237acb3292fd2fce100c8c8eefc41@1

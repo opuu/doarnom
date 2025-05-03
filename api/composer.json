@@ -1,0 +1,28 @@
+{
+  "name": "opuu/enventory",
+  "description": "OpuApi",
+  "type": "library",
+  "license": "GPL 2",
+  "scripts": {
+    "dev": "php -S localhost:8000 -t public"
+  },
+  "autoload": {
+    "psr-4": {
+      "Opu\\": "./"
+    }
+  },
+  "config": {
+    "vendor-dir": "./Vendor"
+  },
+  "authors": [
+    {
+      "name": "Opu",
+      "email": "obayed.opu@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "phpmailer/phpmailer": "^6.5",
+    "imagecow/imagecow": "^2.4"
+  }
+}

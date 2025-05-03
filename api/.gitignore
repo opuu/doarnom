@@ -1,0 +1,6 @@
+Libraries/*
+composer.lock
+App/Backup/DB/*
+App/Cache/*
+Vendor/*
+App/Config/_Config.php
