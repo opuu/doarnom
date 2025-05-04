@@ -12,7 +12,7 @@ class Config
     public static $db_password = '2580';
 
     // app config
-    public static $app_name = 'Enventory';
+    public static $app_name = 'PetAdoption';
     public static $app_url = 'http://localhost:8080';
     public static $app_theme_color = '#ff0044';
     public static $app_debug = true;
@@ -23,7 +23,7 @@ class Config
     public static $smpt_username = 'test@broadbrander.com';
     public static $smpt_password = 'Vv*t],M=Ghg9';
     public static $smpt_from_email = 'test@broadbrander.com';
-    public static $smpt_from_name = 'Enventory';
+    public static $smpt_from_name = 'PetAdoption';
     public static $smpt_reply_to = 'test@broadbrander.com';
 
     // api access permission
@@ -34,7 +34,7 @@ class Config
         'http://192.168.31.193:8888',
         'https://api.broadbrander.com',
         'https://pos.opu.rocks',
-        'https://enventory.xyz',
+        'https://PetAdoption.xyz',
         'https://localhost',
         'http://localhost',
     ];
