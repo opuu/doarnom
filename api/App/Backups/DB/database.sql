@@ -82,6 +82,9 @@ CREATE TABLE `pets` (
     `weight` int DEFAULT NULL,
     `height` int DEFAULT NULL,
     `location` varchar(255) DEFAULT NULL,
+    `image` varchar(255) DEFAULT NULL,
+    `classification` json DEFAULT '{}',
+    `colors` json DEFAULT '{}',
     `status` varchar(255) DEFAULT 'pending', -- pending, available, adopted, lost, found
     `user_id` int DEFAULT NULL,
     `custom_fields` json DEFAULT NULL,
@@ -90,6 +93,7 @@ CREATE TABLE `pets` (
   `deleted_at` datetime DEFAULT NULL,
     PRIMARY KEY (`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 
 -- `adoption_requests`
 

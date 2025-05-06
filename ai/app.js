@@ -8,7 +8,7 @@ const cors = require('cors');
 
 // Initialize express app
 const app = express();
-const port = 3000;
+const port = 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -48,6 +48,17 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Image preview endpoint
+app.get('/image/:filename', (req, res) => {
+  const filePath = path.join(__dirname, 'uploads', req.params.filename);
+  if (fs.existsSync(filePath)) {
+    res.sendFile(filePath);
+  }
+  else {
+    res.status(404).json({ error: 'Image not found' });
+  }
+});
+
 // Endpoint to handle image upload and classification
 app.post('/classify', upload.single('image'), (req, res) => {
   if (!req.file) {
@@ -81,6 +92,7 @@ app.post('/classify', upload.single('image'), (req, res) => {
 
     try {
       const classification = JSON.parse(result);
+      classification.imageUrl = `http://localhost:${port}/image/${path.basename(imagePath)}`;
       return res.json(classification);
     } catch (e) {
       console.error('Failed to parse Python output:', e);

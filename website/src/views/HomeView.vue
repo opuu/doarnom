@@ -1,7 +1,7 @@
 <template>
   <HomeHero />
-  <HomePets />
-  <HomePets />
+  <HomePets categoryName="Cats" />
+  <HomePets categoryName="Dogs" />
   <HomeCTA />
 </template>
 

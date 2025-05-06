@@ -29,6 +29,8 @@ class AdoptionController extends Controller
     {
         $data = $this->request(['name']);
 
+        $data['user_id'] = XUSER['id'];
+
         $adoption = CRUD::create('adoption_requests', $data);
 
         if (!$adoption) {
